@@ -1,0 +1,53 @@
+<div class="breadcrumb">  
+  <a routerLink="/starwars/personajes">Personajes</a>
+  / Perfil del Personaje
+</div>
+<mat-progress-bar *ngIf="loading"
+  mode="indeterminate"
+  color="warn"
+  ></mat-progress-bar>
+
+  
+<div class="character-view" *ngIf="!loading">    
+
+    
+
+    <mat-card>        
+        <div>
+          <h1>{{character.name}} </h1>
+          <b>height</b>
+          {{character.height}}
+          <hr/>
+          <b>mass</b>
+          {{character.mass}}
+          <hr/>
+          <b>birth_year</b>
+          {{character.birth_year}}
+          <hr/>
+          <b>gender</b>
+          {{character.gender}}
+        </div>      
+    </mat-card>
+
+
+    <mat-card style="margin-top:20px;">
+      <h2>Films</h2>      
+    </mat-card>
+
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let film of films">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                <b>{{film.title}}</b> ( {{film.release_date}} )
+            </mat-panel-title>              
+          </mat-expansion-panel-header>
+      
+          <div>
+              Director <b>{{film.director}}</b><br/>
+              {{film.opening_crawl}}
+          </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+</div>

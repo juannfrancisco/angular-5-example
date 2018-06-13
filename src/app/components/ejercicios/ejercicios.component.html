@@ -1,0 +1,21 @@
+
+<h1>personaje</h1>
+{{ personaje | json }}
+
+<h1>Peliculas</h1>
+<ul>
+  <li *ngFor="let pel of peliculas">
+    {{pel | json}}
+  </li>
+</ul>
+<h1>Modificacion</h1>
+
+<ul>
+  <li *ngFor="let x of peliculas2">
+    {{x | json}}
+  </li>
+</ul>
+
+<button (click)="agregarEl()">click</button>
+
+<app-nuevo-cursos></app-nuevo-cursos>

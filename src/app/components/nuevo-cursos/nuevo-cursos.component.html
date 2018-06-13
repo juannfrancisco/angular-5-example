@@ -1,0 +1,12 @@
+<div style="margin: 20px; width:400px;">  
+    <mat-card>
+      <h2>Nuevo Curso</h2>
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" [(ngModel)]="name" placeholder="Nombre">
+      </mat-form-field><br/> 
+      <mat-form-field class="example-full-width">
+        <input matInput type="number" [(ngModel)]="students" placeholder="estudiantes">
+      </mat-form-field><br/>
+      <button mat-raised-button (click)="addCourse()" color="primary">Agregar Curso</button>
+    </mat-card>
+  </div>

@@ -1,0 +1,37 @@
+<mat-progress-bar *ngIf="loading"
+  mode="indeterminate"
+  color="warn"
+  ></mat-progress-bar>
+
+<div class="characters-view" *ngIf="!loading">
+    <mat-card>
+      <h1>Personajes</h1>
+      <hr/>
+      <mat-table #table [dataSource]="characters">
+        <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <b>{{element.name}}</b> </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Height </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.height}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Birth Year </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.birth_year}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="clickRow(row)"
+        ></mat-row>    
+      </mat-table>
+    </mat-card>
+</div>
