@@ -6,11 +6,11 @@
       <mat-list>
         <h3 mat-subheader>Personajes</h3>
         <mat-list-item>  
-          <a routerLink="starwars/personajes">Ejercicio 1</a>
+          <a routerLink="starwars/personajes">Star Wars</a>
         </mat-list-item>
         <mat-divider></mat-divider>        
         <mat-list-item>            
-          <a routerLink="materiales">Ejercicio 2</a>
+          <a routerLink="playlist/reproductor">PlayList</a>
         </mat-list-item>
           <mat-divider></mat-divider>        
         <mat-list-item>            
@@ -24,7 +24,7 @@
   <mat-sidenav-content>
         <mat-toolbar color="primary">
           <mat-toolbar-row>
-            <span (click)="sidenav.open()">Curso Angular</span>
+            <span id="titlte-app" (click)="sidenav.open()">Curso Angular</span>
             <a routerLink="" mat-button>Inicio</a>
             <a routerLink="materiales" [queryParams]="{size:10,page:1}" mat-button>Contenido</a>            
           </mat-toolbar-row>

@@ -1,21 +1,36 @@
 
-<h1>personaje</h1>
-{{ personaje | json }}
 
-<h1>Peliculas</h1>
+<p>{{numero | numeroElevado: 3 }}</p>
+
+
+
+    <p>{{ birthday | date: 'shortTime' }}</p>
+    <p>{{ birthday | date: 'fullDate' }}</p>
+    <p>{{ birthday | date: 'd/M/y' }}</p>
+
+
+
+
+<br/>
+{{ name | uppercase }}
+<br/>
+{{ lastName | lowercase }}
+<br/>
+{{ avanceCurso | percent }}
+<br/>
+{{ valorCurso | currency }}
+
+<br/>
+{{ year | number }}
+
+<br/>
+{{ lastName | titlecase }}
+
+<br/>
 <ul>
-  <li *ngFor="let pel of peliculas">
-    {{pel | json}}
-  </li>
-</ul>
-<h1>Modificacion</h1>
-
-<ul>
-  <li *ngFor="let x of peliculas2">
-    {{x | json}}
-  </li>
+  <li *ngFor='let curso of cursos |slice:1:3' >{{curso}}</li>
 </ul>
 
-<button (click)="agregarEl()">click</button>
 
-<app-nuevo-cursos></app-nuevo-cursos>
+<app-nuevo-cursos (open)="test($event)" ></app-nuevo-cursos>
+

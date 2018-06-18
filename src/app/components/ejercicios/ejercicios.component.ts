@@ -1,41 +1,41 @@
-import { Post } from './../../model/post';
-import { PostService } from './../../services/post.service';
-import { CursosService } from './../../services/cursos.service';
+import { ReactiveService } from './../../services/reactive.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
-import { throwToolbarMixedModesError } from '@angular/material';
 
 @Component({
   selector: 'app-ejercicios',
   templateUrl: './ejercicios.component.html',
   styleUrls: ['./ejercicios.component.css'],
-  providers: [
-    PostService
-  ]
+  providers: [ReactiveService]
 })
 export class EjerciciosComponent implements OnInit {
 
-  personaje:any;
-  peliculas:any[];
-  peliculas2:any[];
 
 
-  constructor( private services:PostService ) {    
-    
-    this.services.findById().subscribe( resp =>{
-      this.personaje = {...resp};
-      this.services.getFilms( resp.films ).subscribe( respFilms =>{
-        this.peliculas = respFilms.slice();
-      } );
-    });
 
-    
+
+  numero:number = 2;
+  rut = '677877601';
+  name = 'Juan';
+  lastName = 'Maldonado leon';
+  avanceCurso = 8000000;
+  valorCurso = 1000;
+  year = 2018;
+
+  cursos = ['angular', 'java', 'react', 'node'];
+
+  birthday = new Date(1989, 0, 12);
+
+  constructor( ) {    
   }
 
   ngOnInit() {
+    
   }
 
-  agregarEl(){
-    this.peliculas.push( {title:'asd'} );
+  test(event){
+    console.log( event );
   }
 
 }

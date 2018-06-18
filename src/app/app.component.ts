@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
@@ -8,9 +9,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
 
   @ViewChild('sidenav') sidenav: MatSidenav;
+
+  constructor(private activatedRoute: ActivatedRoute){
+    console.log( "log" );
+    this.activatedRoute.url
+    .subscribe(url => console.log('The URL changed to: ' + url));
+  }
 
   reason = '';
 

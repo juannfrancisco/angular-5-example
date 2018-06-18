@@ -1,7 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppMaterialModule } from './modules/app-material.module';
 import { AppRoutingModule } from './modules/app-routing.module';
@@ -13,9 +13,13 @@ import { MaterialesComponent } from './components/materiales/materiales.componen
 import { CursosService } from './services/cursos.service';
 import { NuevoCursosComponent } from './components/nuevo-cursos/nuevo-cursos.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CharactersComponent } from './components/starwars/characters/characters.component';
 import { StarWarsCharactersComponent } from './components/starwars/star-wars-characters/star-wars-characters.component';
 import { StarWarsCharacterProfileComponent } from './components/starwars/star-wars-character-profile/star-wars-character-profile.component';
+import { RutPipe } from './pipes/rut.pipe';
+import { NumeroElevadoPipe } from './pipes/numero-elevado.pipe';
+import { ReproductoMusicaComponent } from './components/playlist/reproducto-musica/reproducto-musica.component';
+import { PlayListComponent } from './components/playlist/play-list/play-list.component';
+import { TimePipe } from './pipes/time.pipe';
 
 
 @NgModule({
@@ -25,9 +29,13 @@ import { StarWarsCharacterProfileComponent } from './components/starwars/star-wa
     EjerciciosComponent,
     MaterialesComponent,
     NuevoCursosComponent,
-    CharactersComponent,
     StarWarsCharactersComponent,
-    StarWarsCharacterProfileComponent
+    StarWarsCharacterProfileComponent,
+    RutPipe,
+    NumeroElevadoPipe,
+    ReproductoMusicaComponent,
+    PlayListComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,8 @@ import { StarWarsCharacterProfileComponent } from './components/starwars/star-wa
     AppRoutingModule,
     AppMaterialModule
   ],
-
+  providers:[
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

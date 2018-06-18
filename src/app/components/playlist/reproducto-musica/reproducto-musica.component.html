@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card class="card">
+        <app-play-list (emisor)="testEvent($event)"></app-play-list>  
+    </mat-card>
+  
+  <div *ngIf="cancion">
+        <mat-card class="card">
+            <div style="text-align: center;padding-bottom:15px;" >
+                <b>{{cancion.nombre}}</b> {{cancion.autor}}
+                <div class="time">
+                    {{time | time}}
+                </div>
+            </div>
+            <div class="bar">
+                <div class="progress" [ngStyle]="{'width': ((time*100)/cancion.duracion)+'%'}" ></div>
+            </div>            
+        </mat-card>
+    </div>  
+</div>

@@ -1,0 +1,16 @@
+<h1>Playlist</h1>
+  <mat-table #table [dataSource]="canciones">
+    <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef>nombre</mat-header-cell>
+        <mat-cell *matCellDef="let element"> <b>{{element.nombre}}</b> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="autor">
+        <mat-header-cell *matHeaderCellDef>autor</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.autor}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="playCancion(row)"></mat-row>    
+  </mat-table>

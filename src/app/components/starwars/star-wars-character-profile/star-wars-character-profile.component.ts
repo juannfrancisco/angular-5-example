@@ -22,13 +22,21 @@ export class StarWarsCharacterProfileComponent implements OnInit {
     const url = this.route.snapshot.params['url'];
     this.starWarsService.findCharacter(url).subscribe( response =>{
       this.character = {...response};
+    });  
+    /**
+    
+    this.starWarsService.findCharacter(url).subscribe( response =>{
+      this.character = {...response};
       
 
       this.starWarsService.findFilms(this.character.films).subscribe( responseFilms =>{
         this.films = responseFilms.slice();
         this.loading = false;
       });
+
     } );
+
+    */
   }
 
 }

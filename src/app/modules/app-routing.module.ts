@@ -1,3 +1,4 @@
+import { ReproductoMusicaComponent } from './../components/playlist/reproducto-musica/reproducto-musica.component';
 import { StarWarsCharacterProfileComponent } from './../components/starwars/star-wars-character-profile/star-wars-character-profile.component';
 import { StarWarsCharactersComponent } from './../components/starwars/star-wars-characters/star-wars-characters.component';
 import { MaterialesComponent } from './../components/materiales/materiales.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'ejercicios',component:EjerciciosComponent},
   {path:'starwars/personajes',component:StarWarsCharactersComponent},
   {path:'starwars/personajes/profile',component:StarWarsCharacterProfileComponent},
+  {path:'playlist/reproductor',component:ReproductoMusicaComponent},
   {path:'materiales',component:MaterialesComponent}
 ];
 
